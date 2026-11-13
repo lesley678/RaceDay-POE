@@ -1,0 +1,2 @@
+@model List<Dictionary<string,object>>
+@{ViewData["Title"]="My events";}<h1 class="page-title">My events</h1><p>Enrolment records returned by your API: @Model.Count</p><a asp-controller="Events" asp-action="Index">Browse more events</a>

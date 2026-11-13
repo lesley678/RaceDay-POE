@@ -1,0 +1,2 @@
+@model List<ResultVm>
+@{ViewData["Title"]="Results";}<h1 class="page-title">Race results</h1>@if(Context.Session.IsRole("Organiser")){<a class="btn btn-warning mb-3" asp-action="Create">Enter result</a>}<table class="table bg-white"><thead><tr><th>Enrolment</th><th>Finish time</th><th>Position</th><th>Status</th></tr></thead><tbody>@foreach(var x in Model){<tr><td>@x.ENROLMENT_ID</td><td>@x.FINISH_TIME</td><td>@x.POSITION</td><td>@x.RESULT_STATUS</td></tr>}</tbody></table>

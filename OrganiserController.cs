@@ -1,0 +1,2 @@
+using Microsoft.AspNetCore.Mvc;using RaceDay.MVC.Services;using RaceDay.MVC.Security;
+namespace RaceDay.MVC.Controllers;[RequireRole("Organiser")]public class OrganiserController(ApiService api):Controller{public async Task<IActionResult>Index(){ViewBag.Events=await api.GetAsync<List<Dictionary<string,object>>>("api/events")??[];ViewBag.Enrolments=await api.GetAsync<List<Dictionary<string,object>>>("api/enrolments")??[];return View();}}
